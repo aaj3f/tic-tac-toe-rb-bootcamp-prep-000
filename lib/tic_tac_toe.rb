@@ -72,6 +72,36 @@ def won?(board)
     end
 end
   
+def full?(board)
+    board.all? do |i|
+       i == "X" || i == "O"
+    end
+end
+  
+def draw?(board)
+  if (full?(board) && !(won?(board)))
+    return true
+  elsif
+    (!(full?(board)) && !(won?(board)))
+    return false
+  elsif !(won?(board))
+    return false
+  end
+end
+  
+def over?(board)
+  draw?(board) || won?(board)
+end
+  
+def winner(board)
+  if (won?(board))
+    winning_array = won?(board)
+    return board[winning_array[0]]
+  else
+    return nil
+  end
+end
+  
 
   
   
