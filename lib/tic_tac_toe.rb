@@ -21,8 +21,8 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def move(board, index, current_player)
-  board[index] = current_player
+def move(board, index, token)
+  board[index] = token
 end
 
 def position_taken?(board, location)
@@ -37,8 +37,8 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  if valid_move?(board, index, current_player)
-    move(board, index, current_player)
+  if valid_move?(board, index, token)
+    move(board, index, token)
     display_board(board)
   else
     turn(board)
