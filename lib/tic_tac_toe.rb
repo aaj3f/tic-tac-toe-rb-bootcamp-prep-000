@@ -107,8 +107,14 @@ end
 def play(board)
   until over?(board) do
   turn (board)
+  end
+if won?(board)
+  puts "Congratulations, Player #{winner(board)}!"
+elsif draw?(board)
+  puts "The game has resulted in a draw."
 end
-if 
+end
+
   
   
 
